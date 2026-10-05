@@ -1,0 +1,63 @@
+﻿<Window x:Class="PrácticaHome_PPC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrácticaHome_PPC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- Definimos las filas (superior para menú, inferior para contenido) -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Definimos las columnas (izquierda para menú lateral, derecha para los juegos) -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 1. BARRA SUPERIOR (Ocupa las dos columnas en la fila 0) -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#2D2D30">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="TIENDA" Margin="15,0" Background="Transparent" Foreground="White" BorderThickness="0"/>
+                <Button Content="COMUNIDAD" Margin="15,0" Background="Transparent" Foreground="White" BorderThickness="0"/>
+                <Button Content="SOPORTE" Margin="15,0" Background="Transparent" Foreground="White" BorderThickness="0"/>
+            </StackPanel>
+            <Button Content="mi perfil" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0" Foreground="White" Background="Transparent" BorderThickness="0"/>
+        </Grid>
+
+        <!-- 2. MENÚ LATERAL IZQUIERDO (Fila 1, Columna 0) -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#3E3E42">
+            <Button Content="Destacados" Margin="10,10,10,5" Padding="5" Background="#2D2D30" Foreground="White"/>
+            <Button Content="Mis juegos" Margin="10,5,10,5" Padding="5" Background="#2D2D30" Foreground="White"/>
+            <Button Content="Configuración" Margin="10,5,10,10" Padding="5" Background="#2D2D30" Foreground="White"/>
+        </StackPanel>
+
+        <!-- 3. ZONA CENTRAL DE VIDEOJUEGOS (Fila 1, Columna 1) -->
+        <Grid Grid.Row="1" Grid.Column="1" Background="#1E1E1E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tarjeta de Juego 1 -->
+            <Border x:Name="Minecraft" Grid.Column="0" Margin="15" Background="#2D2D30" CornerRadius="8" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Text="GTA IV" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+            </Border>
+
+            <!-- Tarjeta de Juego 2 -->
+            <Border Grid.Column="1" Margin="15" Background="#2D2D30" CornerRadius="8" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Text="GTA V" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+            </Border>
+
+            <!-- Tarjeta de Juego 3 -->
+            <Border Grid.Column="2" Margin="15" Background="#2D2D30" CornerRadius="8" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Text="GTA VI" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
