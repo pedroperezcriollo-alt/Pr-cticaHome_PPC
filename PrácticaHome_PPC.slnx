@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="PrácticaHome_PPC/PrácticaHome_PPC.csproj" />
+  <Project Path="PrácticaHome_PPC.Tests/PrácticaHome_PPC.Tests.csproj" />
 </Solution>

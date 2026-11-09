@@ -1,0 +1,59 @@
+<Window x:Class="PrácticaHome_PPC.F_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrácticaHome_PPC"
+        mc:Ignorable="d"
+        Title="Inicio de sesión - Catálogo de videojuegos"
+        Height="380" Width="420"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E">
+    <Grid Margin="40,25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- Título -->
+            <RowDefinition Height="Auto"/>  <!-- Etiqueta usuario -->
+            <RowDefinition Height="Auto"/>  <!-- Campo usuario -->
+            <RowDefinition Height="Auto"/>  <!-- Etiqueta contraseña -->
+            <RowDefinition Height="Auto"/>  <!-- Campo contraseña -->
+            <RowDefinition Height="*"/>     <!-- Mensaje dinámico -->
+            <RowDefinition Height="Auto"/>  <!-- Botones -->
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <TextBlock Grid.Row="0" Text="INICIAR SESIÓN" FontSize="22" FontWeight="Bold"
+                   Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <!-- Usuario -->
+        <Label Grid.Row="1" Content="Usuario:" Foreground="White" Padding="0,0,0,4"/>
+        <TextBox Grid.Row="2" x:Name="txtUsuario" Height="30" FontSize="14"
+                 VerticalContentAlignment="Center" Padding="5,0"
+                 Background="#2D2D30" Foreground="White" BorderBrush="Gray"/>
+
+        <!-- Contraseña (PasswordBox oculta los caracteres) -->
+        <Label Grid.Row="3" Content="Contraseña:" Foreground="White" Padding="0,12,0,4"/>
+        <PasswordBox Grid.Row="4" x:Name="pwdContrasena" Height="30" FontSize="14"
+                     VerticalContentAlignment="Center" Padding="5,0"
+                     Background="#2D2D30" Foreground="White" BorderBrush="Gray"/>
+
+        <!-- Mensaje dinámico de éxito o error -->
+        <TextBlock Grid.Row="5" x:Name="txtMensaje" Text="" TextWrapping="Wrap"
+                   TextAlignment="Center" VerticalAlignment="Center" FontSize="13" Margin="0,10"/>
+
+        <!-- Botones -->
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnLogin" Content="Login" Height="34" IsDefault="True"
+                    Background="#007ACC" Foreground="White" BorderThickness="0"
+                    Click="BtnLogin_Click"/>
+            <Button Grid.Column="2" x:Name="btnSalir" Content="Salir" Height="34"
+                    Background="#3E3E42" Foreground="White" BorderThickness="0"
+                    Click="BtnSalir_Click"/>
+        </Grid>
+    </Grid>
+</Window>
